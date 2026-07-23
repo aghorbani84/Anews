@@ -22,7 +22,6 @@
             overflow-x: hidden;
         }
         
-        /* Navbar */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
@@ -35,7 +34,6 @@
         nav a { color: var(--text-color); text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.9rem; }
         nav a:hover { color: var(--accent-color); }
         
-        /* Hero Section */
         .hero {
             min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; padding: 100px 20px;
@@ -50,11 +48,9 @@
         }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(10, 132, 255, 0.4); }
 
-        /* Section Styling */
         section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
         h2 { font-size: 2.5rem; margin-bottom: 60px; text-align: center; font-weight: 800; letter-spacing: -1px; }
         
-        /* Features Grid */
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .feature-card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 30px; border-radius: 20px; transition: transform 0.3s; }
         .feature-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
@@ -62,38 +58,42 @@
         .feature-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: #fff; }
         .feature-card p { color: #aaa; font-size: 0.95rem; line-height: 1.5; }
 
-        /* Device Showcase */
-        .showcase-container { display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .showcase-container { display: flex; justify-content: center; align-items: flex-start; gap: 80px; flex-wrap: wrap; }
         
-        /* Phone Mockup */
         .phone-mockup {
             width: 300px; height: 620px; background: #111; border-radius: 45px; padding: 12px;
-            box-shadow: 0 0 0 2px #333, 0 30px 60px rgba(0,0,0,0.8); position: relative;
+            box-shadow: 0 0 0 2px #333, 0 30px 60px rgba(0,0,0,0.8); position: relative; flex-shrink: 0;
         }
         .phone-mockup::before { content: ''; position: absolute; top: 25px; left: 50%; transform: translateX(-50%); width: 120px; height: 30px; background: #000; border-radius: 20px; z-index: 2; }
         .phone-screen { width: 100%; height: 100%; background: #000; border-radius: 35px; overflow: hidden; }
         .phone-screen img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Desktop Mockup */
-        .desktop-mockup { width: 100%; max-width: 700px; background: #111; border-radius: 16px; padding: 10px; box-shadow: 0 30px 60px rgba(0,0,0,0.8); border: 1px solid #333; }
-        .desktop-bar { display: flex; gap: 8px; padding: 0 0 10px 5px; }
-        .desktop-bar span { width: 12px; height: 12px; background: #444; border-radius: 50%; }
-        .desktop-screen { width: 100%; border-radius: 8px; overflow: hidden; }
-        .desktop-screen img { width: 100%; display: block; }
+        .desktop-mockup { 
+            width: 100%; max-width: 750px; background: #1a1a1a; border-radius: 16px; padding: 16px; 
+            box-shadow: 0 50px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05); transition: transform 0.3s;
+        }
+        .desktop-mockup:hover { transform: translateY(-5px); }
+        .desktop-bar { display: flex; gap: 8px; padding: 0 0 16px 5px; }
+        .desktop-bar span { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+        .desktop-screen { width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #000; }
+        .desktop-screen img { width: 100%; display: block; object-fit: cover; }
         
         .mockup-label { text-align: center; margin-top: 20px; font-weight: 600; color: #888; }
         
-        /* Tech Stack */
         .tech-badges { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
         .tech-badge { background: var(--card-bg); border: 1px solid var(--border-color); padding: 10px 20px; border-radius: 12px; font-weight: 600; font-size: 0.9rem; }
 
-        /* Footer */
         footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--border-color); color: #666; }
         footer a { color: var(--accent-color); text-decoration: none; }
         
         @media (max-width: 768px) {
             .hero h1 { font-size: 3rem; }
             nav a { display: none; }
+            .showcase-container { gap: 40px; }
+            .desktop-mockup { max-width: 100%; }
         }
     </style>
 </head>
@@ -144,7 +144,9 @@
             <div>
                 <div class="desktop-mockup">
                     <div class="desktop-bar">
-                        <span></span><span></span><span></span>
+                        <span class="dot-red"></span>
+                        <span class="dot-yellow"></span>
+                        <span class="dot-green"></span>
                     </div>
                     <div class="desktop-screen">
                         <img src="screenshots/LinuxAppDarkMode.png" alt="Linux App Dark Mode">

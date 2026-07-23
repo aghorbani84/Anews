@@ -1,0 +1,42 @@
+# ---- Backend (Python) ----
+__pycache__/
+*.pyc
+.env
+venv/
+env/
+
+# ---- Frontend (Flutter/Dart) ----
+anews/lib/main.dart
+
+# Flutter build & cache
+anews/build/
+anews/.dart_tool/
+anews/.flutter-plugins
+anews/.flutter-plugins-dependencies
+anews/.packages
+anews/.pub-cache/
+anews/.pub/
+anews/pubspec.lock
+
+# Android specific
+anews/android/.gradle/
+anews/android/captures/
+anews/android/gradlew
+anews/android/gradlew.bat
+anews/android/local.properties
+anews/android/**/GeneratedPluginRegistrant.java
+anews/android/key.properties
+anews/**/*.jks
+
+# iOS specific
+anews/ios/Flutter/
+anews/ios/Runner/GeneratedPluginRegistrant.h
+anews/ios/Runner/GeneratedPluginRegistrant.m
+anews/ios/ServiceDefinitions.json
+anews/ios/Runner.xcodeproj/project.xcworkspace/xcuserdata/
+
+# IDE & OS
+.idea/
+*.iml
+.vscode/
+.DS_Store

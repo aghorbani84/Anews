@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANews - Modern News App</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --card-bg: #161b22;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px 60px;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            background: linear-gradient(to right, #58a6ff, #a371f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p { font-size: 1.2rem; color: #8b949e; max-width: 600px; margin: 20px auto; }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover { background-color: #1f6feb; }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 60px 0;
+        }
+        .card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+        }
+        .card h3 { color: var(--accent-color); margin-top: 0; }
+
+        /* Phone Mockup Section */
+        .showcase {
+            text-align: center;
+            padding: 60px 0;
+        }
+        .phones {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .phone {
+            width: 280px;
+            padding: 14px;
+            background: #000;
+            border-radius: 38px;
+            box-shadow: 0 20px 45px rgba(0,0,0,.5), 0 0 0 8px #222;
+            transition: transform 0.3s;
+        }
+        .phone:hover { transform: translateY(-10px); }
+        .phone img {
+            width: 100%;
+            display: block;
+            border-radius: 28px;
+        }
+        .phone-label { margin-top: 15px; font-weight: bold; color: #8b949e; }
+
+        /* Tech Stack */
+        .tech-stack {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #30363d;
+        }
+        .tech-icons { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
+        .tech-item { background: var(--card-bg); padding: 10px 20px; border-radius: 20px; border: 1px solid #30363d; }
+        
+        footer { text-align: center; padding: 40px 0; color: #8b949e; border-top: 1px solid #30363d; }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <img src="screenshots/Logo.png" width="120" style="margin-bottom: 20px; border-radius: 24px;"><h1>ANews</h1>
+        <p>A modern, full-stack news application featuring a Google News-like UI. Built with Flutter & FastAPI. Supports Dark Mode and RTL/LTR languages.</p>
+        <a href="https://github.com/aghorbani84/ANews" class="btn">View on GitHub</a>
+    </div>
+
+    <div class="container">
+        <div class="features">
+            <div class="card">
+                <h3>📱 Modern UI</h3>
+                <p>Beautiful Material 3 design with Breaking News carousel, category tabs, and smooth animations.</p>
+            </div>
+            <div class="card">
+                <h3>🌐 Bilingual</h3>
+                <p>Instantly switch between English and Farsi. Full RTL layout support for a native experience.</p>
+            </div>
+            <div class="card">
+                <h3>🌙 Dark Mode</h3>
+                <p>Seamless Light and Dark theme support that follows system settings or user preference.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ FastAPI Backend</h3>
+                <p>High-performance asynchronous Python backend to fetch and serve news dynamically.</p>
+            </div>
+            <div class="card">
+                <h3>🔒 Secure</h3>
+                <p>API keys are safely stored using environment variables (.env) and never exposed to the client.</p>
+            </div>
+            <div class="card">
+                <h3>🔄 Real-time Data</h3>
+                <p>Fetches real news data using the Webz.io API with robust error handling and pull-to-refresh.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="showcase">
+        <h2>App Preview</h2>
+        <div class="phones">
+            <div>
+                <div class="phone">
+                    <img src="screenshots/MobileAppDarkMode.png" alt="Light Mode">
+                </div>
+                <div class="phone-label">Mobile App</div>
+            </div>
+            <div>
+                <div class="phone">
+                    <img src="screenshots/LinuxAppDarkMode.png" alt="Dark Mode">
+                </div>
+                <div class="phone-label">Linux Desktop</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tech-stack">
+        <h2>Tech Stack</h2>
+        <div class="tech-icons">
+            <div class="tech-item">Flutter</div>
+            <div class="tech-item">Dart</div>
+            <div class="tech-item">FastAPI</div>
+            <div class="tech-item">Python</div>
+            <div class="tech-item">Uvicorn</div>
+            <div class="tech-item">HTTPX</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Built with ❤️ by aghorbani84</p>
+    </footer>
+
+</body>
+</html>

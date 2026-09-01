@@ -1,18 +1,49 @@
 ```
-# Kotlin Multiplatform Project
+# Gradle
 .gradle/
 build/
-*.gradle
-*.jar
-*.class
+!gradle/wrapper/gradle-wrapper.properties
+
+# Kotlin
+*.kotlin_metadata
+
+# Android
+*.apk
+*.aar
+*.ap_
+local.properties
+captures/
+.externalNativeBuild
+.gradle
+build/
 
 # IDE
 .idea/
 *.iml
 *.ipr
 *.iws
+.vscode/
 
-# System
+# OS
 .DS_Store
 Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+*.env*
+
+# Coverage
+coverage/
+*.gcov
+*.lcov
+*.profdata
+*.profraw
+
+# Testing
+*.tmp
+*.temp
 ```

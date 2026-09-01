@@ -2,31 +2,17 @@
 # Gradle
 .gradle/
 build/
-!gradle/wrapper/gradle-wrapper.properties
+target/
 
-# Kotlin
-*.kotlin_metadata
-
-# Android
-*.apk
-*.aar
-*.ap_
-local.properties
-captures/
-.externalNativeBuild
-.gradle
-build/
+# Dependencies
+node_modules/
+vendor/bundle
 
 # IDE
 .idea/
-*.iml
-*.ipr
-*.iws
 .vscode/
-
-# OS
-.DS_Store
-Thumbs.db
+*.swp
+*.swo
 
 # Logs
 *.log
@@ -34,16 +20,18 @@ Thumbs.db
 # Environment
 .env
 .env.local
-*.env*
+*.env.*
 
-# Coverage
-coverage/
-*.gcov
-*.lcov
-*.profdata
-*.profraw
+# OS
+.DS_Store
+Thumbs.db
 
-# Testing
-*.tmp
-*.temp
+# Archives
+*.zip
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.gz
+*.rar
+*.7z
 ```

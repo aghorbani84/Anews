@@ -23,35 +23,38 @@ jobs:
           distribution: 'temurin'
           cache: gradle
       
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+      
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-        working-directory: ./anews/kotlinMultiplatform
+        working-directory: kotlinMultiplatform
       
       - name: Build Debug APK
-        run: ./gradlew :androidApp:assembleDebug
-        working-directory: ./anews/kotlinMultiplatform
+        run: ./gradlew :androidApp:assembleDebug --no-daemon
+        working-directory: kotlinMultiplatform
       
       - name: Upload Debug APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: app-debug
-          path: anews/kotlinMultiplatform/androidApp/build/outputs/apk/debug/*.apk
+          name: app-debug-apk
+          path: kotlinMultiplatform/androidApp/build/outputs/apk/debug/*.apk
       
       - name: Build Release APK
-        run: ./gradlew :androidApp:assembleGithubRelease
-        working-directory: ./anews/kotlinMultiplatform
+        run: ./gradlew :androidApp:assembleGithubRelease --no-daemon
+        working-directory: kotlinMultiplatform
       
       - name: Upload Release APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: app-release
-          path: anews/kotlinMultiplatform/androidApp/build/outputs/apk/githubRelease/*.apk
+          name: app-release-apk
+          path: kotlinMultiplatform/androidApp/build/outputs/apk/githubRelease/*.apk
       
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: anews/kotlinMultiplatform/androidApp/build/outputs/apk/githubRelease/*.apk
+          files: kotlinMultiplatform/androidApp/build/outputs/apk/githubRelease/*.apk
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
